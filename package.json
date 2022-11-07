@@ -1,0 +1,26 @@
+{
+  "name": "ufarm",
+  "version": "1.0.0",
+  "description": "Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arondagmills/Project.git"
+  },
+  "author": "aron_kolyanga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arondagmills/Project/issues"
+  },
+  "homepage": "https://github.com/arondagmills/Project#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.6.5",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2"
+  }
+}

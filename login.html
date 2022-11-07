@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+		rel="stylesheet"
+	/>
+	<link rel="stylesheet" href="/public/css/register.css" />
+	<title>Register</title>
+</head>
+<section>
+	<div class="navbar-dark">
+		<nav class="navbar navbar-expand-lg navbar-light text-bg-light">
+			<div class="container-fluid">
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarTogglerDemo01"
+					aria-controls="navbarTogglerDemo01"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+					<a class="navbar" href="/views/Home.html"><b>U</b></a
+					>farm
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/views/login.html"
+								>Products</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/views/login.html">About us</a>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								href="/views/sign.html"
+								tabindex="-1"
+								aria-disabled="true"
+								>Sign Up</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+</section>
+<form>
+	<h1>Sign Up</h1>
+	<div class="row">
+		<div class="col-4">
+			<label class="form-label" for="Name1">Name</label
+			><input
+				class="form-control"
+				id="Name1"
+				type="name"
+				aria-describedby="nameHelp"
+				required
+			/>
+			<div class="form-text" id="nameHelp"></div>
+		</div>
+		<div class="col-3">
+			<label class="form-label" for="Gender1">Gender</label
+			><select
+				class="form-control"
+				id="Gender1"
+				input=""
+				type="gender"
+				aria-describedby="genderHelp"
+				required
+			>
+				<option value="1">Male</option>
+				<option value="2">Female</option>
+			</select>
+		</div>
+		<div class="col-5">
+			<label class="form-label" for="Date1">Date of Registration</label
+			><input class="form-control" id="date1" type="date" aria-describedby="date1Help" />
+			<div class="form-text" id="date1Help"></div>
+		</div>
+		<div class="col-4">
+			<label class="form-label" for="Date2">Date of Birth</label
+			><input class="form-control" id="date2" type="date" aria-describedby="date2Help" />
+			<div class="form-text" id="date2Help"></div>
+		</div>
+		<div class="col-4">
+			<label class="form-label" for="activity1">Activities undertaken</label
+			><select
+				class="form-control"
+				id="Activity1"
+				input=""
+				type="gender"
+				aria-describedby="activityHelp"
+				required
+			>
+				<option value="1">Register Urban farmers</option>
+				<option value="2">Approve and inspect of produce</option>
+				<option value="3">Booking and Orders</option>
+			</select>
+		</div>
+		<div class="col-3">
+			<label class="form-label" for="phonenumber">PhoneNumber</label
+			><input
+				class="form-control"
+				id="PhoneNumber1"
+				type="phonenumber"
+				aria-describedby="phonenumberHelp"
+				placeholder="0778 234 679"
+				required
+			/>
+			<div class="form-text" id="phonenumberHelp"></div>
+		</div>
+		<div class="col-4">
+			<label class="form-label" for="Nin1">NIN</label
+			><input
+				class="form-control"
+				id="Nin1"
+				type="nin"
+				aria-describedby="ninHelp"
+				placeholder="Fa1"
+				required
+			/>
+			<div class="form-text" id="ninHelp"></div>
+		</div>
+		<div class="col-4">
+			<label class="form-label" for="Ward1">Ward</label
+			><select
+				class="form-control"
+				id="ward1"
+				input=""
+				type="ward"
+				aria-describedby="wardHelp"
+				required
+			>
+				<option value="1">LC1</option>
+				<option value="2">LC2</option>
+				<option value="3">LC3</option>
+				<option value="4">LC4</option>
+			</select>
+		</div>
+		<div class="col-4">
+			<label class="form-label" for="role1">Role</label
+			><select
+				class="form-control"
+				id="role1"
+				input=""
+				type="role"
+				aria-describedby="roleHelp"
+				aria-placeholder="Role assigned"
+				required
+			>
+				<option value="1">Agriculture Officer</option>
+				<option value="2">User</option>
+			</select>
+		</div>
+		<div class="col-4">
+			<label class="form-label" for="UserID1">UserID</label
+			><input
+				class="form-control"
+				id="UserID1"
+				type="userID"
+				aria-describedby="userIDHelp"
+				placeholder="001"
+				required
+			/>
+			<div class="form-text" id="userIDHelp"></div>
+		</div>
+		<div class="col-4">
+			<label class="form-label" for="password">Password</label
+			><input
+				class="form-control"
+				id="password"
+				type="password"
+				aria-describedby="password"
+				required
+			/>
+			<div class="form-text" id="passwordHelp"></div>
+		</div>
+	</div>
+	<button class="btn btn-primary" type="submit" onclick="alertText()">submit</button>
+</form>
+<div style="margin-bottom: 25%"></div>
+<section>
+	<footer style="text-align: center; background-color: rgb(63, 61, 61)">
+		<p><strong>Follow us</strong></p>
+		<img
+			src="/image/3225179_media_app_social_popular_logo_whatsapp.png"
+			style="width: 50px"
+			alt=""
+		/><img
+			src="/image/3225194_app_logo_popular_social_facebook_media.png"
+			style="width: 50px"
+			alt=""
+		/><img
+			src="/image/3225180_logo_popular_social_youtube_app_media.png"
+			style="width: 50px"
+			alt=""
+		/><img
+			src="/image/3225191_social_instagram_media_app_popular_logo.png"
+			style="width: 50px"
+			alt=""
+		/>
+	</footer>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/alert.js"></script>

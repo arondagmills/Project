@@ -1,0 +1,41 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='css/Urban.css')
+  title Home Page
+section
+  .navbar-dark
+    nav.navbar.navbar-expand-lg.navbar-light.text-bg-light
+      .container-fluid
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo01' aria-controls='navbarTogglerDemo01' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarTogglerDemo01.collapse.navbar-collapse
+          a.navbar(href='/views/Home.html')
+            b U
+          | farm
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='/views/login.html') Products
+            li.nav-item
+              a.nav-link(href='/views/login.html') About us
+            li.nav-item
+              a.nav-link(href='/views/sign.html' tabindex='-1' aria-disabled='true') Sign Up
+          form.d-flex
+            input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
+            button.btn.btn-outline-success(type='submit')
+              | Search
+  .img
+    div(style='width: 100%; height: 10%')
+      img(src='image/pexels-rajukhan-pathan-4840120.jpg' style='width: 100%; margin-top: -17%' alt='')
+section
+  footer(style='text-align: center; background-color: rgb(63, 61, 61)')
+    p
+      strong Follow us
+    img(src='image/3225179_media_app_social_popular_logo_whatsapp.png' style='width: 50px' alt='')
+    img(src='image/3225194_app_logo_popular_social_facebook_media.png' style='width: 50px' alt='')
+    img(src='image/3225180_logo_popular_social_youtube_app_media.png' style='width: 50px' alt='')
+    img(src='image/3225191_social_instagram_media_app_popular_logo.png' style='width: 50px' alt='')
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js')

@@ -1,0 +1,116 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='css/farmer1.css')
+  title Agriculture Officer
+section
+  .navbar-dark
+    nav.navbar.navbar-expand-lg.navbar-light.text-bg-light
+      .container-fluid
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo01' aria-controls='navbarTogglerDemo01' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarTogglerDemo01.collapse.navbar-collapse
+          a.navbar(href='/views/Home.html')
+            b U
+          | farm
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='#') Products
+            li.nav-item
+              a.nav-link(href='#') About us
+            li.nav-item
+              a.nav-link(href='#' tabindex='-1' aria-disabled='true') Sign Up
+  section(style='margin: 4%;')
+    .d-flex.align-items-start
+      #v-pills-tab.nav.flex-column.nav-pills.me-3(role='tablist' aria-orientation='vertical')
+        button#v-pills-home-tab.nav-link.active(data-bs-toggle='pill' data-bs-target='#v-pills-home' type='button' role='tab' aria-controls='v-pills-home' aria-selected='true') Dashboard
+        button#v-pills-profile-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-profile' type='button' role='tab' aria-controls='v-pills-profile' aria-selected='false') Register
+      #v-pills-tabContent.tab-content
+        #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab' tabindex='0')
+        #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab' tabindex='0')
+          form
+            h1 Registration of Farmerone
+            .row
+              .col-3
+                label.form-label(for='Namel1') Name
+                input#Name1.form-control(type='name' aria-describedby='nameHelp')
+                #nameHelp.form-text
+              .col-3
+                label.form-label(for='Ward1') Ward
+                select#Ward1.form-control(input='' type='ward' aria-describedby='wardHelp')
+                  option(value='0')
+                  option(value='1') Ward1
+                  option(value='2') Ward2
+                  option(value='3') Ward3
+                  option(value='4') Ward4
+              .col-3
+                label.form-label(for='Date1') Date of Registration
+                input#date1.form-control(type='date' aria-describedby='date1Help')
+                #date1Help.form-text
+              .col-3
+                label.form-label(for='UserID1') Unique
+                input#UserID1.form-control(type='userID' aria-describedby='userIDHelp' placeholder='FO1')
+                #userIDHelp.form-text
+              .col-3
+                label.form-label(for='Gendert1') Gender
+                select#gender1.form-control(input='' type='gender' aria-describedby='genderHelp')
+                  option(value='0')
+                  option(value='1') Male
+                  option(value='2') Female
+              .col-3
+                label.form-label(for='Date1') Date of birth
+                input#date2.form-control(type='date' aria-describedby='date2Help')
+                #date2Help.form-text
+              .col-3
+                label.form-label(for='activities1') Activities
+                select#activities1.form-control(input='' type='activities' aria-describedby='activitiesHelp')
+                  option(value='0')
+                  option(value='1') Farming
+                  option(value='2') Marketing
+              .col-3
+                label.form-label(for='Nin') Nin
+                input#nin.form-control(type='nin' aria-describedby='ninHelp' placeholder='ID')
+                #ninHelp.form-text
+              .col-3
+                label.form-label(for='Direction') Direction of Residence
+                input#dierction.form-control(type='direction' aria-describedby='directionHelp')
+                #directionHelp.form-text
+              .col-3
+                label.form-label(for='Direction1') Residence type
+                input#dierction1.form-control(type='direction1' aria-describedby='direction1Help')
+                #direction1Help.form-text
+              .col-3
+                label.form-label(for='Password') Password
+                input#password.form-control(type='password' aria-describedby='passwordHelp')
+                #passwordHelp.form-text
+              .col-2
+                label.form-label(for='Ward1') Ward btn 1-10 years
+                select#Ward1.form-control(input='' type='ward' aria-describedby='wardHelp')
+                  option(value='0')
+                  option(value='1') Ward1
+                  option(value='2') Ward2
+                  option(value='3') Ward3
+                  option(value='4') Ward4
+              .col-3
+                button.btn.btn-primary(type='submit' style='margin: 10px;') Register
+    .row
+      .col-6
+        article
+          img(src='image/pexels-helena-lopes-4731089.jpg' width='100%' alt='')
+          p
+      .col-6
+        article
+          img(src='image/black guy.jpg' width='100%' alt='')
+  div(style='margin-bottom: 25%;')
+  section(style='nav-up: inherit;')
+    footer(style='text-align: center; background-color: rgb(63, 61, 61)')
+      p
+        strong Follow us
+      img(src='image/3225179_media_app_social_popular_logo_whatsapp.png' style='width: 50px' alt='')
+      img(src='image/3225194_app_logo_popular_social_facebook_media.png' style='width: 50px' alt='')
+      img(src='image/3225180_logo_popular_social_youtube_app_media.png' style='width: 50px' alt='')
+      img(src='image/3225191_social_instagram_media_app_popular_logo.png' style='width: 50px' alt='')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js')

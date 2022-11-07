@@ -1,0 +1,10 @@
+form {
+	background-color: rgb(207, 237, 173);
+	margin: 5% auto;
+	padding: 25px;
+	border-radius: 5px;
+	width: 800px;
+}
+body {
+	background: rgb(59, 60, 60);
+}

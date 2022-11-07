@@ -1,0 +1,15 @@
+/* styling the body*/
+form {
+	background-color: rgb(207, 237, 173);
+	margin: 12% auto;
+	padding: 40px;
+	width: 500px;
+	border-radius: 5px;
+}
+.mb-3 {
+	padding: 20px 30px;
+	margin: 10px auto;
+}
+body {
+	background-color: rgb(122, 128, 134);
+}
