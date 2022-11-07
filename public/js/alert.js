@@ -4,4 +4,3 @@ function alertText() {
 	alert("You are successfully registered");
 }
 accessbutton.onclick = alertText;
-
