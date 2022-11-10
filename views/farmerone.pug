@@ -36,7 +36,7 @@ section
       #v-pills-tabContent.tab-content
         #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab' tabindex='0')
         #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab' tabindex='0')
-          form
+          form(action="/FO" method="post") 
             h1 Registration of Urban Farmer
             .row
               .col-5
@@ -44,7 +44,7 @@ section
                 input#Name1.form-control(type='name' aria-describedby='nameHelp')
                 #nameHelp.form-text
               .col-3
-                label.form-label(for='Gendert1') Gender
+                label.form-label(for='Gender1') Gender
                 select#gender1.form-control(input='' type='gender' aria-describedby='genderHelp')
                   option(value='0')
                   option(value='1') Male
@@ -75,6 +75,13 @@ section
                   option(value='2') Ward2
                   option(value='3') Ward3
                   option(value='4') Ward4
+                .col-2
+                label.form-label(for='Ward1') Role 
+                select#role1.form-control(input='role' type='role' aria-describedby='roleHelp')
+                  option(value='0')
+                  option(value='Agriculture Officer') Agriculture Officer
+                  option(value='Farmer one') Farmer one
+                  option(value='Urban farmer') Urban farmer
               .col-3
                 label.form-label(for='Nin') NIN
                 input#nin.form-control(type='nin' aria-describedby='ninHelp' placeholder='ID')

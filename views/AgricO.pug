@@ -31,16 +31,16 @@ section
       #v-pills-tabContent.tab-content
         #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab' tabindex='0')
         #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab' tabindex='0')
-          form
+          form(action="/OA" method="post") 
             h1 Registration of Farmerone
             .row
               .col-3
-                label.form-label(for='Namel1') Name
-                input#Name1.form-control(type='name' aria-describedby='nameHelp')
+                label.form-label(for='Name1') Name
+                input#Name1.form-control(type='name' name= "Name1" aria-describedby='nameHelp')
                 #nameHelp.form-text
               .col-3
                 label.form-label(for='Ward1') Ward
-                select#Ward1.form-control(input='' type='ward' aria-describedby='wardHelp')
+                select#Ward1.form-control(input='ward' type='ward' name="ward1" aria-describedby='wardHelp')
                   option(value='0')
                   option(value='1') Ward1
                   option(value='2') Ward2
@@ -48,47 +48,54 @@ section
                   option(value='4') Ward4
               .col-3
                 label.form-label(for='Date1') Date of Registration
-                input#date1.form-control(type='date' aria-describedby='date1Help')
+                input#date1.form-control(type='date' name="Date1" aria-describedby='date1Help')
                 #date1Help.form-text
               .col-3
                 label.form-label(for='UserID1') Unique
-                input#UserID1.form-control(type='userID' aria-describedby='userIDHelp' placeholder='FO1')
+                input#UserID1.form-control(type='userID' name="UserID1" aria-describedby='userIDHelp' placeholder='FO1')
                 #userIDHelp.form-text
               .col-3
-                label.form-label(for='Gendert1') Gender
-                select#gender1.form-control(input='' type='gender' aria-describedby='genderHelp')
+                label.form-label(for='Gender1') Gender
+                select#gender1.form-control(input='gender' type='gender' name="Gender1" aria-describedby='genderHelp')
                   option(value='0')
                   option(value='1') Male
                   option(value='2') Female
               .col-3
-                label.form-label(for='Date1') Date of birth
-                input#date2.form-control(type='date' aria-describedby='date2Help')
+                label.form-label(for='Date2') Date of birth
+                input#date2.form-control(type='date' name="Date2" aria-describedby='date2Help')
                 #date2Help.form-text
               .col-3
                 label.form-label(for='activities1') Activities
-                select#activities1.form-control(input='' type='activities' aria-describedby='activitiesHelp')
+                select#activities1.form-control(input='activities' type='activities' name="Activities" aria-describedby='activitiesHelp')
                   option(value='0')
                   option(value='1') Farming
                   option(value='2') Marketing
               .col-3
                 label.form-label(for='Nin') Nin
-                input#nin.form-control(type='nin' aria-describedby='ninHelp' placeholder='ID')
+                input#nin.form-control(type='nin' name="Nin" aria-describedby='ninHelp' placeholder='ID')
                 #ninHelp.form-text
               .col-3
                 label.form-label(for='Direction') Direction of Residence
-                input#dierction.form-control(type='direction' aria-describedby='directionHelp')
+                input#dierction.form-control(type='direction' name="Direction" aria-describedby='directionHelp')
                 #directionHelp.form-text
+              .col-2
+                label.form-label(for='role') Role 
+                select#role1.form-control(input='Role' type='role' name="role" aria-describedby='roleHelp')
+                  option(value='0')
+                  option(value='Agriculture Officer') Agriculture Officer
+                  option(value='Farmer one') Farmer one
+                  option(value='Urban farmer') Urban farmer
               .col-3
                 label.form-label(for='Direction1') Residence type
-                input#dierction1.form-control(type='direction1' aria-describedby='direction1Help')
+                input#dierction1.form-control(type='direction1' name="direction1" aria-describedby='direction1Help')
                 #direction1Help.form-text
               .col-3
                 label.form-label(for='Password') Password
-                input#password.form-control(type='password' aria-describedby='passwordHelp')
+                input#password.form-control(type='password' name="password" aria-describedby='passwordHelp')
                 #passwordHelp.form-text
               .col-2
-                label.form-label(for='Ward1') Ward btn 1-10 years
-                select#Ward1.form-control(input='' type='ward' aria-describedby='wardHelp')
+                label.form-label(for='Ward2') Ward btn 1-10 years
+                select#Ward2.form-control(input='ward2' type='ward' name="ward2" aria-describedby='wardHelp')
                   option(value='0')
                   option(value='1') Ward1
                   option(value='2') Ward2

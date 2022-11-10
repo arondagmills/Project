@@ -31,7 +31,7 @@ section
       #v-pills-tabContent.tab-content
         #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab' tabindex='0')
         #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab' tabindex='0')
-          form
+          form(action="/UB" method ="post") 
             h1 Add produce/register
             .row
               .col-5
@@ -46,6 +46,13 @@ section
                   option(value='2') Ward2
                   option(value='3') Ward3
                   option(value='4') Ward4
+              .col-2
+                label.form-label(for='Ward1') Role 
+                select#role1.form-control(input='' type='role' aria-describedby='roleHelp')
+                  option(value='0')
+                  option(value='Agriculture Officer') Agriculture Officer
+                  option(value='Farmer one') Farmer one
+                  option(value='Urban farmer') Urban farmer
               .col-4
                 label.form-label(for='Date1') Date
                 input#date1.form-control(type='date' aria-describedby='date1Help')

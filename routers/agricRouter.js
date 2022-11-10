@@ -1,4 +1,5 @@
-const { text } = require("express");
+const express = require("express");
+const router = express.Router();
 const mongoose = require("mongoose");
 
 const passportLocalMongoose = require("passport-local-mongoose");
@@ -67,6 +68,30 @@ userSchema.plugin(passportLocalMongoose, {
 	usernameField: "UserID",
 });
 
+router.get("/OA", (req, res) => {
+	res.render("AgricO");
+});
 
+// router.post("/OA", async (req, res) => {
+// 	const AgricO = await UsersModel(req.body);
+// 	res.send("register is done");
+// });
+router.post("/OA", async (req, res) => {
+	// console.log(req.body);
+	try {
+		const user = new Registration (req.body);
+		console.log(user);
+		await Registration.register(user, req.body.password, (error) => {
+			if (error) {
+				throw error;
+			}
+			res.redirect("/FO");
+		});
+	} catch (error) {
+		res.status(400).send("you registration has failed");
+		console.log(error);
+	}
+});
 
-module.exports = mongoose.model("Registration", userSchema);
+module.exports = router;
+// module.exports = mongoose.model("registration", userSchema);
