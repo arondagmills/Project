@@ -14,7 +14,6 @@ const expressSession = require("express-session")({
 //...............import the user model...............
 const Registration = require("./models/User");
 
-
 //................... setup database connections..................//
 
 mongoose
@@ -38,6 +37,7 @@ mongoose
 const SignupRoutes = require("./routers/SignupRoutes");
 const agricRouter = require("./routers/agricRouter");
 const authRoutes = require("./routers/authRoutes");
+const farmeroneRouters = require("./routers/farmeroneRouters");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -65,14 +65,15 @@ passport.deserializeUser(Registration.deserializeUser());
 app.use("/", SignupRoutes);
 app.use("/", agricRouter);
 app.use("/", authRoutes);
+app.use("/", farmeroneRouters);
 //...................routes........................//
 app.get("/", (req, res) => {
 	res.render("home");
 });
 
-app.get("/FO", (req, res) => {
-	res.render("farmerone");
-});
+// app.get("/FO", (req, res) => {
+// 	res.render("farmerone");
+// });
 
 app.get("/login", (req, res) => {
 	res.render("register");
@@ -82,13 +83,13 @@ app.get("/login", (req, res) => {
 // 	res.render("Signup");
 // });
 
-app.get("/OA", (req, res) => {
-	res.render("AgricO");
-});
+// app.get("/OA", (req, res) => {
+// 	res.render("AgricO");
+// });
 
-app.get("/UB", (req, res) => {
-	res.render("Urban");
-});
+// app.get("/UB", (req, res) => {
+// 	res.render("Urban");
+// });
 
 //...................how  to send files....................//
 

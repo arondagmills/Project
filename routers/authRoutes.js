@@ -5,7 +5,7 @@ const passport = require("passport");
 const UsersModel = require("../models/User");
 
 router.get("/Sign", async(req, res) => {
-	const user = await UsersModel(req.render(req.body));
+	// const user = await UsersModel(req.render(req.body));
 	req.render("register");
 });
 router.post(
@@ -14,7 +14,7 @@ router.post(
 	(req, res) => {
 		req.session.user = req.user;
 		if (req.user.role === "Urban farmer") {
-			res.redirect("/OA");
+			res.redirect("/UB");
 		} else if (req.user.role === "Farmer one") {
 			res.redirect("/FO");
 		} else if (req.user.role === "Agriculture Office") {

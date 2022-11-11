@@ -40,15 +40,15 @@ section
             h1 Registration of Urban Farmer
             .row
               .col-5
-                label.form-label(for='Namel1') Name
-                input#Name1.form-control(type='name' aria-describedby='nameHelp')
+                label.form-label(for='Name1') Name
+                input#Name1.form-control(type='Name1' name="Name1" aria-describedby='nameHelp')
                 #nameHelp.form-text
               .col-3
                 label.form-label(for='Gender1') Gender
-                select#gender1.form-control(input='' type='gender' aria-describedby='genderHelp')
+                select#gender1.form-control(input='Gender1' name="Gender1" type='gender' aria-describedby='genderHelp')
                   option(value='0')
-                  option(value='1') Male
-                  option(value='2') Female
+                  option(value='Male') Male
+                  option(value='Female') Female
               .col-4
                 label.form-label(for='Date1') Date of Registration
                 input#date1.form-control(type='date' aria-describedby='date1Help')
@@ -58,41 +58,41 @@ section
                 input#date1.form-control(type='date' aria-describedby='date1Help')
                 #date1Help.form-text
               .col-4
-                label.form-label(for='activities1') Activities undertaken
-                select#activities1.form-control(input='' type='activities' aria-describedby='activitiesHelp')
+                label.form-label(for='Activities') Activities undertaken
+                select#activities1.form-control(input='Activities' name="Activities" type='activities' aria-describedby='activitiesHelp')
                   option(value='0')
-                  option(value='1') Farming
-                  option(value='2') Marketing
+                  option(value='Farming') Farming
+                  option(value='Marketing') Marketing
               .col-4
                 label.form-label(for='phonenumber') Contact
-                input#PhoneNumber1.form-control(type='phonenumber' aria-describedby='phonenumberHelp' placeholder='0778 234 679')
+                input#PhoneNumber1.form-control(type='phonenumber' name="phonenumber" aria-describedby='phonenumberHelp' placeholder='0778 234 679')
                 #phonenumberHelp.form-text
               .col-4
                 label.form-label(for='Ward1') Ward
-                select#Ward1.form-control(input='' type='ward' aria-describedby='wardHelp')
+                select#Ward1.form-control(input='' type='ward' name="ward1" aria-describedby='wardHelp')
                   option(value='0')
-                  option(value='1') Ward1
-                  option(value='2') Ward2
-                  option(value='3') Ward3
-                  option(value='4') Ward4
+                  option(value='Ward1') Ward1
+                  option(value='Ward2') Ward2
+                  option(value='Ward3') Ward3
+                  option(value='Ward4') Ward4
                 .col-2
-                label.form-label(for='Ward1') Role 
-                select#role1.form-control(input='role' type='role' aria-describedby='roleHelp')
+                label.form-label(for='role1') Role 
+                select#role1.form-control(input='role' type='role' name="role" aria-describedby='roleHelp')
                   option(value='0')
                   option(value='Agriculture Officer') Agriculture Officer
                   option(value='Farmer one') Farmer one
                   option(value='Urban farmer') Urban farmer
               .col-3
                 label.form-label(for='Nin') NIN
-                input#nin.form-control(type='nin' aria-describedby='ninHelp' placeholder='ID')
+                input#nin.form-control(type='nin' name="Nin" aria-describedby='ninHelp' placeholder='ID')
                 #priceHelp.form-text
               .col-2
-                label.form-label(for='ID') UniqueID 
-                input#id.form-control(type='id' aria-describedby='idHelp')
-                #priceHelp.form-text
+                label.form-label(for='UserID') UniqueID 
+                input#UserID.form-control(type='UserID' name="UserID" aria-describedby='UserIDHelp' )
+                #UserIDHelp.form-text
               .col-2
-                label.form-label(for='Password') Password 
-                input#password.form-control(type='password' aria-describedby='passwordHelp')
+                label.form-label(for='password') Password 
+                input#password.form-control(type='password' name="password" aria-describedby='passwordHelp')
                 #passwordHelp.form-text
               .col-4
                 button.btn.btn-primary(type='submit' style='margin: 10px;') Register

@@ -61,12 +61,15 @@ const userSchema = new mongoose.Schema({
 		// required: true,
 		trim: true,
 	},
+	// UniqueID: {
+	// 	type: String,
+	// 	// required: true,
+	// 	trim: true,
+	// },
 });
 
 userSchema.plugin(passportLocalMongoose, {
 	usernameField: "UserID",
 });
-
-
 
 module.exports = mongoose.model("Registration", userSchema);
