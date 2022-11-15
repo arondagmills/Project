@@ -12,7 +12,7 @@ section
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo01' aria-controls='navbarTogglerDemo01' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarTogglerDemo01.collapse.navbar-collapse
-          a.navbar(href='Home.html')
+          a.navbar(href='/')
             b U
           | farm
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
@@ -23,15 +23,19 @@ section
             li.nav-item
               a.nav-link(href='sign.html' tabindex='-1' aria-disabled='true') Sign Up
 // Example Code
-form
+form(action="/login" method="post") 
   h1 Login Form
   .mb-3
     label.form-label(for='exampleInputUsername1') Username
-    input#exampleInputUsername1.form-control(type='username' aria-describedby='usernameHelp')
+    input#exampleInputUsername1.form-control(type='name'  name="Name1" aria-describedby='usernameHelp')
+    #usernameHelp.form-text
+  .mb-3
+    label.form-label(for='exampleInputUsername1') UserID
+    input#exampleInputUsername1.form-control(type='String'  name="UserID" aria-describedby='usernameHelp')
     #usernameHelp.form-text
   .mb-3
     label.form-label(for='exampleInputPassword1') Password
-    input#exampleInputPassword1.form-control(type='password')
+    input#exampleInputPassword1.form-control(type='password' name="password")
   .mb-3.form-check
     input#exampleCheck1.form-check-input(type='checkbox')
     label.form-check-label(for='exampleCheck1') Remember me 

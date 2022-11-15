@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 
 const Registration = require("../models/User");
 
-
 router.get("/OA", (req, res) => {
 	res.render("AgricO");
 });
@@ -14,7 +13,7 @@ router.get("/OA", (req, res) => {
 // 	res.send("register is done");
 // });
 router.post("/OA", async (req, res) => {
-	console.log(req.body);
+	// console.log(req.body);
 	try {
 		const user = new Registration(req.body);
 		console.log(user);
@@ -31,6 +30,20 @@ router.post("/OA", async (req, res) => {
 		}
 	} catch (error) {
 		res.status(400).send("you registration has failed");
+		console.log(error);
+	}
+});
+
+router.get("/list", (req, res) => {
+	res.render("FOlist");
+});
+router.post("/list", async (req, res) => {
+	console.log(req.body);
+	try {
+		let farmerone = await Registration.find({ role: "Farmer one" });
+		res.render("FOlist", { farmerone: farmerone });
+	} catch (error) {
+		res.status(400).send("Not found");
 		console.log(error);
 	}
 });

@@ -4,23 +4,25 @@ const passport = require("passport");
 
 const UsersModel = require("../models/User");
 
-router.get("/Sign", async(req, res) => {
-	// const user = await UsersModel(req.render(req.body));
-	req.render("register");
+router.get("/login", async (req, res) => {
+	// const user = await UsersModel(res.render(req.body));
+	res.render("Login");
 });
 router.post(
-	"/Sign",
-	passport.authenticate("local", { failureRedirect: "/Sign", failureMessage: true }),
+	"/login",
+	passport.authenticate("local", { failureRedirect: "/login", failureMessage: true }),
 	(req, res) => {
 		req.session.user = req.user;
-		if (req.user.role === "Urban farmer") {
+		if (req.user.role == "Urban farmer") {
 			res.redirect("/UB");
-		} else if (req.user.role === "Farmer one") {
+		} else if (req.user.role == "Farmer one") {
 			res.redirect("/FO");
-		} else if (req.user.role === "Agriculture Office") {
-			req.redirect("/OA");
-		} else if (req.user.role === "user") {
+		} else if (req.user.role == "Agriculture Officer") {
+			res.redirect("/OA");
+		} else if (req.user.role == "user") {
 			req.redirect("/");
+		} else {
+			res.send("you not registered");
 		}
 	}
 );

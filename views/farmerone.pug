@@ -13,7 +13,7 @@ section
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo01' aria-controls='navbarTogglerDemo01' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarTogglerDemo01.collapse.navbar-collapse
-          a.navbar(href='/views/Home.html')
+          a.navbar(href='/')
             b U
           | farm
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
@@ -41,11 +41,11 @@ section
             .row
               .col-5
                 label.form-label(for='Name1') Name
-                input#Name1.form-control(type='Name1' name="Name1" aria-describedby='nameHelp')
+                input#Name1.form-control(type='String' name="Name1" aria-describedby='nameHelp')
                 #nameHelp.form-text
               .col-3
                 label.form-label(for='Gender1') Gender
-                select#gender1.form-control(input='Gender1' name="Gender1" type='gender' aria-describedby='genderHelp')
+                select#gender1.form-control(input='Gender1' name="Gender1" type='String' aria-describedby='genderHelp')
                   option(value='0')
                   option(value='Male') Male
                   option(value='Female') Female
@@ -59,7 +59,7 @@ section
                 #date1Help.form-text
               .col-4
                 label.form-label(for='Activities') Activities undertaken
-                select#activities1.form-control(input='Activities' name="Activities" type='activities' aria-describedby='activitiesHelp')
+                select#activities1.form-control(input='Activities' name="Activities" type='String' aria-describedby='activitiesHelp')
                   option(value='0')
                   option(value='Farming') Farming
                   option(value='Marketing') Marketing
@@ -69,7 +69,7 @@ section
                 #phonenumberHelp.form-text
               .col-4
                 label.form-label(for='Ward1') Ward
-                select#Ward1.form-control(input='' type='ward' name="ward1" aria-describedby='wardHelp')
+                select#Ward1.form-control(input='' type='String' name="ward1" aria-describedby='wardHelp')
                   option(value='0')
                   option(value='Ward1') Ward1
                   option(value='Ward2') Ward2
@@ -77,14 +77,14 @@ section
                   option(value='Ward4') Ward4
                 .col-2
                 label.form-label(for='role1') Role 
-                select#role1.form-control(input='role' type='role' name="role" aria-describedby='roleHelp')
+                select#role1.form-control(input='role' type='String' name="role" aria-describedby='roleHelp')
                   option(value='0')
                   option(value='Agriculture Officer') Agriculture Officer
                   option(value='Farmer one') Farmer one
                   option(value='Urban farmer') Urban farmer
               .col-3
                 label.form-label(for='Nin') NIN
-                input#nin.form-control(type='nin' name="Nin" aria-describedby='ninHelp' placeholder='ID')
+                input#nin.form-control(type='String' name="Nin" aria-describedby='ninHelp' placeholder='ID')
                 #priceHelp.form-text
               .col-2
                 label.form-label(for='UserID') UniqueID 

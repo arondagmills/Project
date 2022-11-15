@@ -13,7 +13,7 @@ section
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarTogglerDemo01' aria-controls='navbarTogglerDemo01' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarTogglerDemo01.collapse.navbar-collapse
-          a.navbar(href='/views/Home.html')
+          a.navbar(href='/')
             b U
           | farm
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
@@ -35,12 +35,12 @@ section
             h1 Add produce/register
             .row
               .col-5
-                label.form-label(for='Namel1') Name
-                input#Name1.form-control(type='name' aria-describedby='nameHelp')
+                label.form-label(for='Name1') Name
+                input#Name1.form-control(type='name' name="Name1" aria-describedby='nameHelp')
                 #nameHelp.form-text
               .col-3
                 label.form-label(for='Ward1') Ward
-                select#Ward1.form-control(input='' type='ward' aria-describedby='wardHelp')
+                select#Ward1.form-control(input='ward1' type='String' aria-describedby='wardHelp')
                   option(value='0')
                   option(value='1') Ward1
                   option(value='2') Ward2
@@ -48,14 +48,14 @@ section
                   option(value='4') Ward4
               .col-2
                 label.form-label(for='Ward1') Role 
-                select#role1.form-control(input='' type='role' aria-describedby='roleHelp')
+                select#role1.form-control(input='role' type='String' name="Ward1" aria-describedby='roleHelp')
                   option(value='0')
                   option(value='Agriculture Officer') Agriculture Officer
                   option(value='Farmer one') Farmer one
                   option(value='Urban farmer') Urban farmer
               .col-4
                 label.form-label(for='Date1') Date
-                input#date1.form-control(type='date' aria-describedby='date1Help')
+                input#date1.form-control(type='String' name="Date1" aria-describedby='date1Help')
                 #date1Help.form-text
               .col-4
                 label.form-label(for='Produce1') Produce Type

@@ -13,7 +13,7 @@ router.get("/FO", (req, res) => {
 // 	res.send("register is done");
 // });
 router.post("/FO", async (req, res) => {
-	console.log(req.body);
+	// console.log(req.body);
 	try {
 		const user = new Registration(req.body);
 		console.log(user);

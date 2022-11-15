@@ -58,10 +58,10 @@ const userSchema = new mongoose.Schema({
 	},
 	password: {
 		type: String,
-		// required: true,
+		required: true,
 		trim: true,
 	},
-	// UniqueID: {
+	// username: {
 	// 	type: String,
 	// 	// required: true,
 	// 	trim: true,

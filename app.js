@@ -38,6 +38,7 @@ const SignupRoutes = require("./routers/SignupRoutes");
 const agricRouter = require("./routers/agricRouter");
 const authRoutes = require("./routers/authRoutes");
 const farmeroneRouters = require("./routers/farmeroneRouters");
+const loginRouter = require("./routers/loginRouter");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -66,6 +67,7 @@ app.use("/", SignupRoutes);
 app.use("/", agricRouter);
 app.use("/", authRoutes);
 app.use("/", farmeroneRouters);
+app.use("/", loginRouter);
 //...................routes........................//
 app.get("/", (req, res) => {
 	res.render("home");
@@ -75,9 +77,9 @@ app.get("/", (req, res) => {
 // 	res.render("farmerone");
 // });
 
-app.get("/login", (req, res) => {
-	res.render("register");
-});
+// app.get("/login", (req, res) => {
+// 	res.render("Login");
+// });
 
 // app.get("/register", (req, res) => {
 // 	res.render("Signup");
@@ -87,9 +89,12 @@ app.get("/login", (req, res) => {
 // 	res.render("AgricO");
 // });
 
-// app.get("/UB", (req, res) => {
-// 	res.render("Urban");
-// });
+app.get("/UB", (req, res) => {
+	res.render("Urban");
+});
+app.get("/list", (req, res) => {
+	res.render("FOlist");
+});
 
 //...................how  to send files....................//
 
