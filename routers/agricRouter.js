@@ -4,14 +4,12 @@ const mongoose = require("mongoose");
 
 const Registration = require("../models/User");
 
-router.get("/OA", (req, res) => {
-	res.render("AgricO");
+router.get("/OA", async (req, res) => {
+	let farmerones = await Registration.find({ role: "Farmer one" });
+	console.log(farmerones);
+	res.render("AgricO", { farmerones: farmerones });
 });
 
-// router.post("/OA", async (req, res) => {
-// 	const AgricO = await UsersModel(req.body);
-// 	res.send("register is done");
-// });
 router.post("/OA", async (req, res) => {
 	// console.log(req.body);
 	try {
@@ -25,7 +23,7 @@ router.post("/OA", async (req, res) => {
 				if (error) {
 					throw error;
 				}
-				res.redirect("/FO");
+				res.redirect("/OA");
 			});
 		}
 	} catch (error) {
@@ -34,14 +32,9 @@ router.post("/OA", async (req, res) => {
 	}
 });
 
-router.get("/list", (req, res) => {
-	res.render("FOlist");
-});
-router.post("/list", async (req, res) => {
-	console.log(req.body);
+router.get("/list", async (req, res) => {
 	try {
-		let farmerone = await Registration.find({ role: "Farmer one" });
-		res.render("FOlist", { farmerone: farmerone });
+		res.render("FOlist");
 	} catch (error) {
 		res.status(400).send("Not found");
 		console.log(error);
@@ -49,4 +42,3 @@ router.post("/list", async (req, res) => {
 });
 
 module.exports = router;
-// module.exports = mongoose.model("registration", userSchema);

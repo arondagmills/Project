@@ -8,10 +8,7 @@ router.get("/FO", (req, res) => {
 	res.render("farmerone");
 });
 
-// router.post("/OA", async (req, res) => {
-// 	const AgricO = await UsersModel(req.body);
-// 	res.send("register is done");
-// });
+
 router.post("/FO", async (req, res) => {
 	// console.log(req.body);
 	try {
@@ -25,7 +22,7 @@ router.post("/FO", async (req, res) => {
 				if (error) {
 					throw error;
 				}
-				res.redirect("/UB");
+				res.redirect("/FO");
 			});
 		}
 	} catch (error) {

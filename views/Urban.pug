@@ -28,69 +28,90 @@ section
       #v-pills-tab.nav.flex-column.nav-pills.me-3(role='tablist' aria-orientation='vertical')
         button#v-pills-home-tab.nav-link.active(data-bs-toggle='pill' data-bs-target='#v-pills-home' type='button' role='tab' aria-controls='v-pills-home' aria-selected='true') Dashboard
         button#v-pills-profile-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-profile' type='button' role='tab' aria-controls='v-pills-profile' aria-selected='false') Register
+        button#v-pills-messages-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-messages' type='button' role='tab' aria-controls='v-pills-messages' aria-selected='false') Upload Produce
       #v-pills-tabContent.tab-content
         #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab' tabindex='0')
+          p This is home
         #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab' tabindex='0')
-          form(action="/UB" method ="post") 
+          form(action="/uploads" enctype="multipart/form-data" method ="post") 
             h1 Add produce/register
             .row
               .col-5
-                label.form-label(for='Name1') Name
-                input#Name1.form-control(type='name' name="Name1" aria-describedby='nameHelp')
+                label.form-label(for='Name1') Produce
+                input#Name1.form-control(type='text' name="productName" aria-describedby='nameHelp')
                 #nameHelp.form-text
               .col-3
                 label.form-label(for='Ward1') Ward
-                select#Ward1.form-control(input='ward1' type='String' aria-describedby='wardHelp')
+                select#Ward1.form-control(type='text' name="ward" aria-describedby='wardHelp')
                   option(value='0')
-                  option(value='1') Ward1
-                  option(value='2') Ward2
-                  option(value='3') Ward3
-                  option(value='4') Ward4
-              .col-2
-                label.form-label(for='Ward1') Role 
-                select#role1.form-control(input='role' type='String' name="Ward1" aria-describedby='roleHelp')
-                  option(value='0')
-                  option(value='Agriculture Officer') Agriculture Officer
-                  option(value='Farmer one') Farmer one
-                  option(value='Urban farmer') Urban farmer
+                  option(value='Ward1') Ward1
+                  option(value='Ward2') Ward2
+                  option(value='Ward3') Ward3
+                  option(value='Ward4') Ward4
               .col-4
                 label.form-label(for='Date1') Date
-                input#date1.form-control(type='String' name="Date1" aria-describedby='date1Help')
+                input#date1.form-control(type='date' name="date" aria-describedby='date1Help')
                 #date1Help.form-text
               .col-4
                 label.form-label(for='Produce1') Produce Type
-                select#produce1.form-control(input='' type='produce' aria-describedby='produceHelp')
+                select#produce1.form-control( type='text' name="produce_type" aria-describedby='produceHelp')
                   option(value='0')
-                  option(value='1') Organic
-                  option(value='2') None organic
+                  option(value='horticulture') Horticulture
+                  option(value='poultry') Poultry
+                  option(value='dairy') Dairy
               .col-4
                 label.form-label(for='Payment1') Mode of payment
-                select#payment1.form-control(input='' type='payment' aria-describedby='paymentHelp')
+                select#payment1.form-control(type='text' name="modeOfPayment" aria-describedby='paymentHelp')
                   option(value='0')
-                  option(value='1') cash
-                  option(value='2') mobile money
+                  option(value='cash') cash
+                  option(value='mobile money') mobile money
               .col-4
                 label.form-label(for='Delivery1') Mode of Delivery
-                select#delivery1.form-control(input='' type='delivery' aria-describedby='deliveryHelp')
+                select#delivery1.form-control( type='text' name="delivery" aria-describedby='deliveryHelp')
                   option(value='0')
-                  option(value='1') pick up
-                  option(value='2') home delivery
+                  option(value='pick up') pick up
+                  option(value='home delivery') home delivery
               .col-4
                 label.form-label(for='quantity') Quantity(kgs)
-                input#kgs.form-control(type='quantity' aria-describedby='kgsHelp')
+                input#kgs.form-control(type='number' name="quantity" aria-describedby='kgsHelp')
                 #kgsHelp.form-text
               .col-4
                 label.form-label(for='Price') Unit Price
-                input#price.form-control(type='price' aria-describedby='priceHelp' placeholder='shs')
+                input#price.form-control(type='number' name="price" aria-describedby='priceHelp' placeholder='shs')
                 #priceHelp.form-text
               .col-4
                 label.form-label(for='Direction') Location
-                input#dierction.form-control(type='direction' aria-describedby='directionHelp')
+                input#dierction.form-control(type='text' name="direction" aria-describedby='directionHelp')
                 #priceHelp.form-text
               .col-4
                 p Upload image here
-                input.file-upload-input(type='file' onchange='readURL(this)' accept='image/*')
+                input.file-upload-input(type='file' name="image" onchange='readURL(this)' accept='image/*')
             button.btn.btn-primary(type='upload' style='margin: 10px;') Upload
+        #v-pills-messages.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-messages-tab' tabindex='0') 
+          h1 Urban farmer's list
+          .row
+            .col-12
+              table.table
+                thead
+                  tr
+                    th(scope='col') productName
+                    th(scope='col') Price
+                    th(scope='col') Quantity
+                    th(scope='col') image
+                    th(scope='col') Update
+                tbody
+                  if ufproduces.length 
+                    each ufproduce in ufproduces 
+                      tr
+                        td #{ufproduce.productName}
+                        td #{ufproduce.price}
+                        td #{ufproduce.quantity}
+                        td 
+                          img(src='/'+ufproduce.image alt="" width='90px')
+                        td
+                          form(action='/update_urbanfarmer' method='post')
+                            input(type="hidden" name='urbanfarmer' value=ufproduce._id )
+                            button(class="btn btn-success" type='submit') Update
     .row
       .col-6
         article

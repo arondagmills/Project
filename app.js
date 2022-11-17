@@ -13,6 +13,7 @@ const expressSession = require("express-session")({
 
 //...............import the user model...............
 const Registration = require("./models/User");
+const Uploading = require("./models/Upload");
 
 //................... setup database connections..................//
 
@@ -38,7 +39,7 @@ const SignupRoutes = require("./routers/SignupRoutes");
 const agricRouter = require("./routers/agricRouter");
 const authRoutes = require("./routers/authRoutes");
 const farmeroneRouters = require("./routers/farmeroneRouters");
-const loginRouter = require("./routers/loginRouter");
+const urbanRoutes = require("./routers/urbanRoutes");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -46,7 +47,7 @@ app.set("views", path.join(__dirname, "views"));
 //............midware...........
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
-app.use("/public/uploads", express.static(__dirname + "/public/uploads"));
+app.use("/public/image", express.static(__dirname + "/public/image"));
 app.use(expressSession);
 app.use(express.json());
 
@@ -67,7 +68,8 @@ app.use("/", SignupRoutes);
 app.use("/", agricRouter);
 app.use("/", authRoutes);
 app.use("/", farmeroneRouters);
-app.use("/", loginRouter);
+app.use("/", urbanRoutes);
+
 //...................routes........................//
 app.get("/", (req, res) => {
 	res.render("home");
