@@ -90,6 +90,12 @@ app.get("/", (req, res) => {
 // app.get("/OA", (req, res) => {
 // 	res.render("AgricO");
 // });
+app.get('/product', (req, res) => {
+	res.render("productList")
+})
+app.get("/about", (req, res) => {
+	res.render("About_us");
+});
 
 app.get("/UB", (req, res) => {
 	res.render("Urban");

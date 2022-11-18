@@ -107,7 +107,7 @@ section
                         td #{ufproduce.price}
                         td #{ufproduce.quantity}
                         td 
-                          img(src='/'+ufproduce.image alt="" width='90px')
+                          img(src='/'+ufproduce.image alt="" width='90px' style='border-radius: 5px;')
                         td
                           form(action='/update_urbanfarmer' method='post')
                             input(type="hidden" name='urbanfarmer' value=ufproduce._id )

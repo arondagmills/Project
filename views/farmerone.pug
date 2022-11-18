@@ -32,7 +32,7 @@ section
         button#v-pills-profile-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-profile' type='button' role='tab' aria-controls='v-pills-profile' aria-selected='false') Register
         button#v-pills-disabled-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-disabled' type='button' role='tab' aria-controls='v-pills-disabled' aria-selected='false') Approved products
         button#v-pills-messages-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-messages' type='button' role='tab' aria-controls='v-pills-messages' aria-selected='false') rejected products
-        button#v-pills-settings-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-settings' type='button' role='tab' aria-controls='v-pills-settings' aria-selected='false') Profile
+        button#v-pills-settings-tab.nav-link(data-bs-toggle='pill' data-bs-target='#v-pills-settings' type='button' role='tab' aria-controls='v-pills-settings' aria-selected='false') List of Urban_Farmers
       #v-pills-tabContent.tab-content
         #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab' tabindex='0')
         #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab' tabindex='0')
@@ -92,15 +92,40 @@ section
                 #UserIDHelp.form-text
               .col-2
                 label.form-label(for='password') Password 
-                input#password.form-control(type='text' name="password" aria-describedby='passwordHelp')
+                input#password.form-control(type='password' name="password" aria-describedby='passwordHelp')
                 #passwordHelp.form-text
               .col-4
                 button.btn.btn-primary(type='submit' style='margin: 10px;') Register
         #v-pills-disabled.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-disabled-tab' tabindex='0' style='text-align: center;') ...
         #v-pills-messages.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-messages-tab' tabindex='0') ...
-        #v-pills-settings.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-settings-tab' tabindex='0') ...
-    article(style='margin: 10px;')
-      img(src='image/pexels-mark-stebnicki-2889440.jpg' width='80%' alt='')
+        #v-pills-settings.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-settings-tab' tabindex='0') 
+          h1 Urban farmer's list
+            .row
+              .col-12
+                table.table
+                  thead
+                    tr
+                      th(scope='col') Name
+                      th(scope='col') Gender
+                      th(scope='col') Ward
+                      th(scope='col') Date
+                      th(scope='col') Update
+                  tbody
+                    //- if urbanfarmers.length 
+                    //-   each urbanfarmer in urbanfarmers 
+                    //-     tr
+                    //-       td #{urbanfarmer.Name1}
+                    //-       td #{urbanfarmer.Gender1}
+                    //-       td #{urbanfarmer.Ward1}
+                    //-       td #{urbanfarmer.Date2}
+                    //-       td
+                    //-         form(action='/update_urbanfarmer' method='post')
+                    //-           input(type="hidden" name='urbanfarmer' value=urbanfarmer._id )
+                    //-           button(class="btn btn-success" type='submit') Update
+    .row
+      .col-6
+        article(style='margin: 40px;')
+          img(src='image/pexels-mark-stebnicki-2889440.jpg' width='150%' alt='')
   div(style='margin-bottom: 25%;')
   section(style='nav-up: inherit;')
     footer(style='text-align: center; background-color: rgb(63, 61, 61)')
