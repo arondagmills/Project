@@ -106,22 +106,25 @@ section
                   thead
                     tr
                       th(scope='col') Name
-                      th(scope='col') Gender
+                      th(scope='col') ProductName
                       th(scope='col') Ward
                       th(scope='col') Date
+                      th(scope='col') Price
                       th(scope='col') Update
                   tbody
-                    //- if urbanfarmers.length 
-                    //-   each urbanfarmer in urbanfarmers 
-                    //-     tr
-                    //-       td #{urbanfarmer.Name1}
-                    //-       td #{urbanfarmer.Gender1}
-                    //-       td #{urbanfarmer.Ward1}
-                    //-       td #{urbanfarmer.Date2}
-                    //-       td
-                    //-         form(action='/update_urbanfarmer' method='post')
-                    //-           input(type="hidden" name='urbanfarmer' value=urbanfarmer._id )
-                    //-           button(class="btn btn-success" type='submit') Update
+                    if ufproduces.length 
+                      each ufproduce in ufproduces
+                        if ufproduce.status == 'pending' 
+                          tr
+                            td #{ufproduce.owner_name}
+                            td #{ufproduce.productName}
+                            td #{ufproduce.Ward}
+                            td #{ufproduce.date}
+                            td #{ufproduce.price}
+                            td
+                              form(action='/update_urbanfarmer' method='post')
+                                input(type="hidden" name='urbanfarmerID' value=ufproduce._id )
+                                button(class="btn btn-success" type='submit') Update
     .row
       .col-6
         article(style='margin: 40px;')

@@ -64,6 +64,10 @@ const uploadSchema = new mongoose.Schema({
 	},
 	owner_name: {
 		type: String
+	}, 
+	status: {
+		type: String,
+		default: "pending"
 	}
 });
 
