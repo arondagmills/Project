@@ -40,6 +40,7 @@ const agricRouter = require("./routers/agricRouter");
 const authRoutes = require("./routers/authRoutes");
 const farmeroneRouters = require("./routers/farmeroneRouters");
 const urbanRoutes = require("./routers/urbanRoutes");
+const produceRouter = require("./routers/produceRouter");
 
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
@@ -69,6 +70,7 @@ app.use("/", agricRouter);
 app.use("/", authRoutes);
 app.use("/", farmeroneRouters);
 app.use("/", urbanRoutes);
+app.use("/", produceRouter);
 
 //...................routes........................//
 app.get("/", (req, res) => {
@@ -90,9 +92,9 @@ app.get("/", (req, res) => {
 // app.get("/OA", (req, res) => {
 // 	res.render("AgricO");
 // });
-app.get('/product', (req, res) => {
-	res.render("productList")
-})
+// app.get("/product", (req, res) => {
+// 	res.render("productList");
+// });
 app.get("/about", (req, res) => {
 	res.render("About_us");
 });

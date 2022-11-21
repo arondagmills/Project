@@ -1,35 +1,58 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const UploadProductModel = require("../models/Upload");
+const UpdatingList = require("../models/Upload");
 const UserModel = require("../models/User");
+const connectEnsureLogin = require('connect-ensure-login')
 
-router.get("/uploads", (req, res) => {
-	res.console.log(req.body);
+router.get("/product", async (req, res) => {
+	const urbanfarmer = req.user;
+	// console.log(urbanfarmer);
+
+	const listProduct = await UpdatingList.find();
+	console.log('this is the farmer produce', listProduct)
+	res.render("productList", { listProducts: listProduct });
 });
-router.post("/uploads", connectEnsureLogin.ensureLoggedIn(), upload.single("image"), async(req, res) => {
-	req.session.user = req.user
-	console.log(req.session.user)
 
-	// res.send('This works');
-	try {
-		const uploadProduct = UploadProductModel(req.body);
+router.post(
+	"/uploadsList",
+	connectEnsureLogin.ensureLoggedIn(),
+	async (req, res) => {
+		req.session.user = req.user;
+		console.log(req.session.user);
 
-		uploadProduct.image = req.file.path;
-		// console.log('This is the uploaded', uploadProduct)
+		// res.send('This works');
+		try {
+			const customerList = UpdatingList(req.body);
 
-		uploadProduct.owner = req.session.user._id,
+			customerList.image = req.file.path;
+			// console.log('This is the uploaded', uploadProduct)
 
-		uploadProduct.owner_name = req.session.user.Name1
+			(customerList.owner = req.session.user._id),
+				(customerList.owner_name = req.session.user.Name1);
 
-		console.log(uploadProduct)
+			console.log(customerList);
 
+			await customerList.save();
 
-		await uploadProduct.save();
-	
-		res.redirect("/UB");
-	} catch (error) {
-		res.status(400).send("you registration has failed");
-		console.log(error);
+			res.redirect("/product");
+		} catch (error) {
+			res.status(400).send("you registration has failed");
+			console.log(error);
+		}
 	}
-});
+);
+
+
+// router.post('/update_urbanfarmer', async (req,res) => {
+// 	const produceById = await UpdatingList.findById({_id: req.body.urbanfarmerID})
+
+// 	produceById.status = 'approved'
+
+// 	produceById.save();
+
+// 	res.redirect('/product')
+// })
+
+
+module.exports = router;

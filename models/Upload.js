@@ -67,8 +67,11 @@ const uploadSchema = new mongoose.Schema({
 	}, 
 	status: {
 		type: String,
-		default: "pending"
-	}
+		default: "pending, approved"
+	},
+	// availability: {
+	// 	type: 
+	// }
 });
 
 module.exports = mongoose.model("farmer_produce", uploadSchema);

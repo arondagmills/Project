@@ -60,26 +60,26 @@ router.post('/update_urbanfarmer', async (req,res) => {
 })
 
 
-// router.post("/FO", async (req, res) => {
-// 	// console.log(req.body);
-// 	try {
-// 		const user = new Registration(req.body);
-// 		console.log(user);
-// 		let uniqueExist = await Registration.findOne({ UserID: req.body.UserID });
-// 		if (uniqueExist) {
-// 			return res.status(400).send("sorry this number is already taken");
-// 		} else {
-// 			await Registration.register(user, req.body.password, (error) => {
-// 				if (error) {
-// 					throw error;
-// 				}
-// 				res.redirect("/FO");
-// 			});
-// 		}
-// 	} catch (error) {
-// 		res.status(400).send("you registration has failed");
-// 		console.log(error);
-// 	}
-// });
+router.post("/FO", async (req, res) => {
+	// console.log(req.body);
+	try {
+		const user = new Registration(req.body);
+		console.log(user);
+		let uniqueExist = await Registration.findOne({ UserID: req.body.UserID });
+		if (uniqueExist) {
+			return res.status(400).send("sorry this number is already taken");
+		} else {
+			await Registration.register(user, req.body.password, (error) => {
+				if (error) {
+					throw error;
+				}
+				res.redirect("/FO");
+			});
+		}
+	} catch (error) {
+		res.status(400).send("you registration has failed");
+		console.log(error);
+	}
+});
 
 module.exports = router;
