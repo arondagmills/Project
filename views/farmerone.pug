@@ -18,11 +18,13 @@ section
           | farm
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
             li.nav-item
-              a.nav-link.active(aria-current='page' href='#') Products
+              a.nav-link.active(aria-current='page' href='/product') Products
             li.nav-item
               a.nav-link(href='#') About us
             li.nav-item
               a.nav-link(href='#' tabindex='-1' aria-disabled='true') Sign Up
+          form.d-flex(action='/logout' method='post')
+            button.btn.btn-outline-success(type='submit') Logout
   header(style='color: black;')
     h2 Dashboard
   section
@@ -36,7 +38,7 @@ section
       #v-pills-tabContent.tab-content
         #v-pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='v-pills-home-tab' tabindex='0')
         #v-pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-profile-tab' tabindex='0')
-          form(action="/FO" method="post") 
+          form(action="/FO" enctype="multipart/form-data" method="post") 
             h1 Registration of Urban Farmer
             .row
               .col-5
@@ -96,8 +98,54 @@ section
                 #passwordHelp.form-text
               .col-4
                 button.btn.btn-primary(type='submit' style='margin: 10px;') Register
-        #v-pills-disabled.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-disabled-tab' tabindex='0' style='text-align: center;') ...
-        #v-pills-messages.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-messages-tab' tabindex='0') ...
+        #v-pills-disabled.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-disabled-tab' tabindex='0' style='text-align: center;')
+          h1 Approved products
+            .row
+              .col-12
+                table.table
+                  thead
+                    tr
+                      th(scope='col') Name
+                      th(scope='col') ProductName
+                      th(scope='col') Ward
+                      th(scope='col') Date
+                      th(scope='col') Price
+                  tbody
+                    if ufproduces.length 
+                      each ufproduce in ufproduces
+                        if ufproduce.status == 'approved' 
+                          tr
+                            td #{ufproduce.owner_name}
+                            td #{ufproduce.productName}
+                            td #{ufproduce.Ward}
+                            td #{ufproduce.date}
+                            td #{ufproduce.price}
+                            //- td
+                            //-   form(action='/update_urbanfarmer' method='post')
+                            //-     input(type="hidden" name='urbanfarmerID' value=ufproduce._id )
+                            //-     button(class="btn btn-success" type='submit') Update
+        #v-pills-messages.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-messages-tab' tabindex='0')    
+          h1 Rejected products
+            .row
+              .col-12
+                table.table
+                  thead
+                    tr
+                      th(scope='col') Name
+                      th(scope='col') ProductName
+                      th(scope='col') Ward
+                      th(scope='col') Date
+                      th(scope='col') Price
+                  tbody
+                    if ufproduces.length 
+                      each ufproduce in ufproduces
+                        if ufproduce.status == 'rejected' 
+                          tr
+                            td #{ufproduce.owner_name}
+                            td #{ufproduce.productName}
+                            td #{ufproduce.Ward}
+                            td #{ufproduce.date}
+                            td #{ufproduce.price}
         #v-pills-settings.tab-pane.fade(role='tabpanel' aria-labelledby='v-pills-settings-tab' tabindex='0') 
           h1 Urban farmer's list
             .row

@@ -38,7 +38,7 @@ router.post("/uploads", connectEnsureLogin.ensureLoggedIn(), upload.single("imag
 
 	// res.send('This works');
 	try {
-		const uploadProduct = UploadProductModel(req.body);
+		const uploadProduct = new  UploadProductModel(req.body);
 
 		uploadProduct.image = req.file.path;
 		// console.log('This is the uploaded', uploadProduct)

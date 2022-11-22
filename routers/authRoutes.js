@@ -20,10 +20,22 @@ router.post(
 		} else if (req.user.role == "Agriculture Officer") {
 			res.redirect("/OA");
 		} else if (req.user.role == "user") {
-			req.redirect("/");
+			res.redirect("/product");
 		} else {
 			res.send("you not registered");
 		}
 	}
 );
+
+router.post("/logout", (req, res) => {
+	if (req.session) {
+		req.session.destroy(function (err) {
+			if (err) {
+				res.status(400).send("logout has failed");
+			} else {
+				return res.redirect("/");
+			}
+		});
+	}
+});
 module.exports = router;

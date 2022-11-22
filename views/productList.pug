@@ -23,9 +23,8 @@ section
               a.nav-link(href='/about') About us
             li.nav-item
               a.nav-link(href='/Register' tabindex='-1' aria-disabled='true') Sign Up
-          form.d-flex
-            input.form-control.me-2(type='search' placeholder='Search' aria-label='Search')
-            button.btn.btn-outline-success(type='submit') Search
+          form.d-flex(action='/logout' method='post')
+            button.btn.btn-outline-success(type='submit') Logout
   section
     .row
         if listProducts.length
@@ -39,8 +38,8 @@ section
                     h6.card-text #{listProduct.price}
                     h6.card-text #{listProduct.quantity}
                     h6.card-text #{listProduct.direction}
-                    a.btn.btn-primary(href='#') Buy Now
-  div(style='margin-bottom: 20%;')
+                    a.btn.btn-primary(href='/order') Buy Now
+  div(style='margin-bottom: 35%;')
   section
     footer(style='text-align: center; background-color: rgb(63, 61, 61)')
       p

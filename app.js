@@ -99,9 +99,14 @@ app.get("/about", (req, res) => {
 	res.render("About_us");
 });
 
-app.get("/UB", (req, res) => {
-	res.render("Urban");
+app.get("/order", (req, res) => {
+	res.render("bookingandorder");
 });
+
+
+// app.get("/UB", (req, res) => {
+// 	res.render("Urban");
+// });
 app.get("/list", (req, res) => {
 	res.render("FOlist");
 });

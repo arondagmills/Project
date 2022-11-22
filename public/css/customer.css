@@ -1,0 +1,54 @@
+body{
+    background-color: rgb(240, 239, 239);
+}
+.filter,.cart,.help{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+
+}
+.sidebar{
+    background: linear-gradient(45deg, rgb(117, 113, 113));
+    margin: 50px;
+    backdrop-filter: blur(5px);
+    height: fit-content;
+    padding: 2rem;
+}
+input[type=checkbox]:checked{
+    accent-color: rgb(182, 201, 130);
+}
+main-container{
+    color: bisque;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+}
+.upcoming-image-box{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border-radius: 5rem;
+    /* overflow: hidden; */
+}
+.products-container{
+    margin: 50px;
+    padding: 50px;
+}
+.approved-products{
+    position: absolute;
+    top: 2rem;
+    color: rgb(226, 213, 29);
+    margin: 5px;
+    background-color: blueviolet;
+    border-radius: 1 px;
+}
+.btn{
+    background-color: black;
+    color: rgb(226, 213, 29);
+}
+.buttons{
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+}

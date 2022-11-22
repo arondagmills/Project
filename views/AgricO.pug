@@ -23,6 +23,8 @@ section
               a.nav-link(href='#') About us
             li.nav-item
               a.nav-link(href='#' tabindex='-1' aria-disabled='true') Sign Up
+          form.d-flex(action='/logout' method='post')
+            button.btn.btn-outline-success(type='submit') Logout
   section(style='margin: 4%;')
     .d-flex.align-items-start
       #v-pills-tab.nav.flex-column.nav-pills.me-3(role='tablist' aria-orientation='vertical')
@@ -86,7 +88,7 @@ section
                   option(value='0')
                   option(value='Agriculture Officer') Agriculture Officer
                   option(value='Farmer one') Farmer one
-                  option(value='Urban farmer') Urban farmer
+                  option(value='user') user
               .col-3
                 label.form-label(for='Direction1') Residence type
                 input#dierction1.form-control(type='String' name="direction1" aria-describedby='direction1Help')

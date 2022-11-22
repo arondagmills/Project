@@ -67,7 +67,7 @@ const uploadSchema = new mongoose.Schema({
 	}, 
 	status: {
 		type: String,
-		default: "pending, approved"
+		default: "pending"
 	},
 	// availability: {
 	// 	type: 

@@ -21,6 +21,8 @@ section
               a.nav-link.active(aria-current='page' href='/product') Products
             li.nav-item
               a.nav-link(href='/Register' tabindex='-1' aria-disabled='true') Sign Up
+          form.d-flex(action='/logout' method='post')
+            button.btn.btn-outline-success(type='submit') Back
 .container
   h1 Urban Farming
   h2 The E-Farmers
@@ -28,7 +30,7 @@ section
     img(src='image/gettyimages-937057284-612x612.jpg' style='border-radius: 500px;' alt='' srcset='')
   p
     | We are here to improve on our farming and marketing experience to serve the very best to our customers to give the best of best shopping life for better life
-  a.btn.btn-success(href='/products') More Details
+  a.btn.btn-success(href='/product') More Details
 .row(style='padding: 20px;')
   .col-6
     h1
