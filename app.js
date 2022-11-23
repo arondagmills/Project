@@ -111,6 +111,9 @@ app.get("/list", (req, res) => {
 	res.render("FOlist");
 });
 
+app.get("/val", (req, res) => {
+	res.render("form");
+});
 //...................how  to send files....................//
 
 // app.get("/Signup", (req, res) => {
